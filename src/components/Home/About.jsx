@@ -3,6 +3,7 @@ import {
   digital_concept_2,
   digital_concept_3,
 } from "../../assets/images";
+import PropTypes from "prop-types";
 import Container from "../Container";
 import TitleSection from "./TitleSection";
 
@@ -33,6 +34,13 @@ const AboutCard = ({ card }) => {
       </div>
     </div>
   );
+};
+
+AboutCard.propTypes = {
+  card: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default function About() {
