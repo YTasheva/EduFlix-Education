@@ -1,9 +1,41 @@
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import API from "../../utils/API";
 
 
 export default function Front() {
   const [searchBar, setSearchBar] = useState(false);
+  const [query, setQuery] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
+
+  const performSearch = async (searchTerm) => {
+    const trimmedQuery = searchTerm.trim();
+    if (!trimmedQuery) return;
+
+    setIsSearching(true);
+    try {
+      const response = await API.search(trimmedQuery);
+      const match = response.data?.items?.find(
+        (item) => item?.id?.videoId !== undefined
+      );
+
+      if (match?.id?.videoId) {
+        const videoUrl = `https://www.youtube.com/watch?v=${match.id.videoId}`;
+        window.open(videoUrl, "_blank", "noopener,noreferrer");
+      } else {
+        console.warn("No results found for query:", trimmedQuery);
+      }
+    } catch (error) {
+      console.error("Error searching for modules:", error);
+    } finally {
+      setIsSearching(false);
+    }
+  };
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    await performSearch(query);
+  };
 
 
 
@@ -15,10 +47,25 @@ export default function Front() {
         >
           <div className="absolute bottom-[24%] sm:left-[6%] left-[5%] flex items-center flex-wrap gap-4">
             {searchBar && (
-              <form className="flex items-end gap-4 flex-wrap">
-                <SearchBar />
-                <button className="bg-white px-2 py-3 w-24 font-bold uppercase text-sm text-black hover:text-white hover:bg-black hover:bg-opacity-50 rounded-md">
-                  Find
+              <form
+                className="flex items-end gap-4 flex-wrap"
+                onSubmit={handleSearch}
+              >
+                <SearchBar
+                  value={query}
+                  onChange={setQuery}
+                  isLoading={isSearching}
+                  onSelectTerm={(term) => {
+                    setQuery(term);
+                    performSearch(term);
+                  }}
+                />
+                <button
+                  type="submit"
+                  disabled={isSearching}
+                  className="bg-white px-2 py-3 w-24 font-bold uppercase text-sm text-black hover:text-white hover:bg-black hover:bg-opacity-50 rounded-md disabled:opacity-60"
+                >
+                  {isSearching ? "Finding..." : "Find"}
                 </button>
               </form>
             )}
