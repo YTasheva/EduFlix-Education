@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function TitleSection({ title, classes }) {
   return (
     <h1
@@ -9,3 +11,8 @@ export default function TitleSection({ title, classes }) {
     </h1>
   );
 }
+
+TitleSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  classes: PropTypes.string,
+};
