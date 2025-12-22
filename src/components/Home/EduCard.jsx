@@ -1,32 +1,29 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import API from "../../utils/API";
 
 export default function EduCard({ card }) {
-  const [searchResults, setSearchResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
 
-  const handleSearchClick = () => {
-    searchVideo(card.topic);
-  };
+  const searchVideo = async (query) => {
+    setIsSearching(true);
+    try {
+      const response = await API.search(query);
+      const match = response.data?.items?.find(
+        (item) => item?.id?.videoId !== undefined
+      );
 
-  const searchVideo = (query) => {
-    API.search(query)
-      .then((response) => {
-        const results = response.data.items;
-
-        for (let i = 0; i < results.length; i++) {
-          if (results[i].id.videoId !== undefined) {
-            const videoId = results[i].id.videoId;
-            const trailerSrc = `https://www.youtube.com/embed/${videoId}`;
-            console.log(trailerSrc);
-            // Add setSearchResults if you want to update state
-            // setSearchResults((prevResults) => [...prevResults, trailerSrc]);
-          }
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching video:', error);
-        // Log error when there is a problem fetching trailer
-      });
+      if (match?.id?.videoId) {
+        const videoUrl = `https://www.youtube.com/watch?v=${match.id.videoId}`;
+        window.open(videoUrl, "_blank", "noopener,noreferrer");
+      } else {
+        console.warn("No video results returned for query:", query);
+      }
+    } catch (error) {
+      console.error("Error fetching video:", error);
+    } finally {
+      setIsSearching(false);
+    }
   };
 
   return (
@@ -46,12 +43,24 @@ export default function EduCard({ card }) {
         </p>
         <i className="fa fa-heart text-xs text-[#6D9886] text-[14px] ml-auto" />
       </div>
-      <h2
-        className="font-bold text-[17px] px-2 hover:text-[#6D9886] transition-colors cursor-pointer"
-        onClick={handleSearchClick}
+      <button
+        type="button"
+        className="font-bold text-[17px] px-2 text-left hover:text-[#6D9886] transition-colors cursor-pointer disabled:opacity-60"
+        onClick={() => searchVideo(card.topic)}
+        disabled={isSearching}
       >
-        {card.topic}
-      </h2>
+        {isSearching ? "Searching for video..." : card.topic}
+      </button>
     </div>
   );
 }
+
+EduCard.propTypes = {
+  card: PropTypes.shape({
+    price: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    topic: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    circleText: PropTypes.string.isRequired,
+  }).isRequired,
+};
