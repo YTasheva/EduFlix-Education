@@ -100,8 +100,8 @@ Search results should dynamically update as the user types, providing real-time 
 
 ## Links
 
-- [Deployed Application](https://iridescent-jelly-cb075f.netlify.app)
-- [GitHub Repo](https://github.com/JonRahman/BananasProject2)
+- [Deployed Application](https://eduflix-education.netlify.app/)
+- [GitHub Repo](https://github.com/YTasheva/EduFlix-Education)
 - [Presentation slides](https://docs.google.com/presentation/d/1g8W_RB0Ge_BiLAR7eQpk6uRR-xB80-R80DcC3i9etD8/edit?usp=sharing)
   
 ## Installation
