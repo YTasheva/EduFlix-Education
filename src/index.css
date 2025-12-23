@@ -41,3 +41,19 @@ body {
   transition: all 0.3s ease-in-out;
   outline: none !important ;
 }
+
+/* Card title hover */
+.card-title {
+  transition: color 0.2s ease-in-out;
+}
+.card-title:hover {
+  color: #1d3557;
+}
+
+/* EduTabs text hover */
+.edu-tab-btn {
+  transition: color 0.2s ease-in-out;
+}
+.edu-tab-btn:hover {
+  color: #1d3557;
+}
