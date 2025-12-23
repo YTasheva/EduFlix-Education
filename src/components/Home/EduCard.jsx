@@ -26,27 +26,44 @@ export default function EduCard({ card }) {
     }
   };
 
+  const handleClick = () => {
+    if (card.videoUrl) {
+      window.open(card.videoUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
+    searchVideo(card.topic);
+  };
+
   return (
-    <div className="h-[550px] w-[320px]">
+    <div className="edu-card h-[550px] w-[320px]">
       <div className="relative rounded-xl overflow-hidden">
-        <img src={card.image} alt="fund1" />
-        <div className="absolute top-4 uppercase right-4 leading-tight font-bold w-[70px] h-[70px] flex items-center justify-center bg-white text-black rounded-full text-[10px] text-center">
+        <img
+          src={card.image}
+          alt="fund1"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute top-4 uppercase right-4 leading-tight font-bold px-3 py-2 bg-gradient-to-br from-[#d9e6f5] to-[#bcd3ec] text-[#1d3557] rounded-md text-[10px] text-center shadow-lg shadow-black/20">
           {card.circleText}
         </div>
       </div>
       <div className="flex items-center gap-4 my-4 px-2">
-        <h1 className="bg-[#5c807162] px-3 py-1 rounded-md text-[#6D9886] text-[17px] font-medium">
-          € {card.price}
+        <h1 className="bg-[#d9e6f5] px-3 py-1 rounded-md text-[#1d3557] text-[17px] font-medium">
+          £ {card.price}
         </h1>
-        <p className="text-xs font-bold text-[#6D9886]">
-          <i className="fa fa-clock text-xs text-[14px]" /> {card.date}
+        <p className="text-xs font-bold text-[#1d3557] flex items-center gap-1">
+          <i className="fa fa-clock text-xs text-[14px]" aria-hidden="true" />{" "}
+          {card.date}
         </p>
-        <i className="fa fa-heart text-xs text-[#6D9886] text-[14px] ml-auto" />
+        <i
+          className="fa fa-heart text-xs text-[#1d3557] text-[14px] ml-auto"
+          aria-hidden="true"
+        />
       </div>
       <button
         type="button"
-        className="font-bold text-[17px] px-2 text-left hover:text-[#6D9886] transition-colors cursor-pointer disabled:opacity-60"
-        onClick={() => searchVideo(card.topic)}
+        className="card-title font-bold text-[17px] px-2 text-left cursor-pointer disabled:opacity-60"
+        onClick={handleClick}
         disabled={isSearching}
       >
         {isSearching ? "Searching for video..." : card.topic}
@@ -62,5 +79,6 @@ EduCard.propTypes = {
     topic: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     circleText: PropTypes.string.isRequired,
+    videoUrl: PropTypes.string,
   }).isRequired,
 };
