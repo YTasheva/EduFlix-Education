@@ -5,45 +5,46 @@ import Container from "./Container";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navLinks = [
+    { label: "Home", to: "/" },
+    { label: "Education", to: "/" },
+    { label: "About", to: "/" },
+    { label: "Contact", to: "/" },
+  ];
+
   return (
-    <nav className="py-2 z-40">
+    <nav className="py-3 z-40 bg-white/90 backdrop-blur-md sticky top-0 shadow-sm">
       <Container>
-        <div className="flex items-center justify-between h-16">
-          <div className="flex gap-4 items-center">
-            <img className="h-[40px] w-[120px]" src={logo} alt="Workflow" />
-            <b> EduFlix</b>
+        <div className="flex items-center justify-between h-14">
+          <div className="flex gap-3 items-center">
+            <img
+              className="brand-logo h-12 w-auto object-contain"
+              src={logo}
+              alt="EduFlix logo"
+              loading="eager"
+              decoding="async"
+            />
+            <span className="brand-text font-bold text-lg text-[#1d3557]">
+              EduFlix
+            </span>
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link
-                  className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  to="/"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Education
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  About
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:bg-button-primary hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Contact
-                </Link>
+              <div className="ml-8 flex items-center space-x-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    to={link.to}
+                    className="px-3 py-2 rounded-lg text-sm font-semibold text-[#1d3557] hover:bg-[#d9e6f5] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
 
           <Link to="/">
-            <div className="hidden md:block hover:bg-button-primary px-4 py-1 rounded-xl">
+            <div className="hidden md:flex items-center gap-2 bg-[#1d3557] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#27476b] transition-colors">
+              <i className="fa-regular fa-user" aria-hidden="true" />
               Log In
             </div>
           </Link>
@@ -51,12 +52,11 @@ function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="bg-[#1d3557] inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#27476b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-[#1d3557]"
               aria-controls="mobile-menu"
-              aria-expanded="false"
+              aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
-
               <i className="fas fa-bars"></i>
             </button>
           </div>
@@ -65,33 +65,20 @@ function Navbar() {
         {isOpen && (
           <div className="md:hidden transition-all" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-black">
-              <Link
-                to="/"
-                className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Home
-              </Link>
-              <Link
-                to="/"
-                className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Education
-              </Link>
-              <Link
-                to="/"
-                className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                About
-              </Link>
-              <Link
-                to="/"
-                className="hover:bg-primary-base hover:bg-button-primary hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Contact
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className="block px-3 py-2 rounded-md text-base font-semibold hover:bg-[#d9e6f5] text-[#1d3557]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
                 to="/profile/neo"
-                className="hover:bg-primary-base bg-button-primary text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="block px-3 py-2 rounded-md text-base font-semibold bg-[#1d3557] text-white hover:bg-[#27476b]"
+                onClick={() => setIsOpen(false)}
               >
                 Log In
               </Link>
