@@ -1,130 +1,187 @@
+<p align="center">
+  <a href="https://yuliya-tasheva.co.uk/">
+    <img src="src/assets/images/eduflix-banner.png" width="900px" alt="EduFlix Education - Educational Platform">
+  </a>
+</p>
+
 <h1 align="center">EduFlix Education</h1>
-   <br>
-  <a href="https://github.com/YTasheva">
+
+<h3 align="center">Educational Platform</h3>
+
+<p align="center">
+  <a href="https://github.com/ytasheva">
       <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg?style=for-the-badge" alt=""></a>
-  <a href="https://github.com/YTasheva/EduFlix/graphs/contributors">
-      <img src="https://img.shields.io/github/contributors/YTasheva/eduflix.svg?style=for-the-badge" alt=""></a>
-  <a href="https://github.com/YTasheva/EduFlix/issues">
-      <img src="https://img.shields.io/github/issues/YTasheva/eduflix.svg?style=for-the-badge" alt=""></a>
-  <a href="https://github.com/YTasheva/EduFlix/network/members">
-      <img src="https://img.shields.io/github/forks/YTasheva/eduflix.svg?style=for-the-badge" alt=""></a>
-      
-  
-  
-## Table of contents
+  <a href="https://github.com/ytasheva/EduFlix-Education/graphs/contributors">
+      <img src="https://img.shields.io/github/contributors/ytasheva/EduFlix-Education.svg?style=for-the-badge" alt=""></a>
+  <a href="https://github.com/ytasheva/EduFlix-Education/issues">
+      <img src="https://img.shields.io/github/issues/ytasheva/EduFlix-Education.svg?style=for-the-badge" alt=""></a>
+  <a href="https://github.com/ytasheva/EduFlix-Education/network/members">
+      <img src="https://img.shields.io/github/forks/ytasheva/EduFlix-Education.svg?style=for-the-badge" alt=""></a>
+  <a href="https://github.com/ytasheva/EduFlix-Education/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/ytasheva/eduflix-education?style=for-the-badge" alt="License"></a> 
+  <a href="https://yuliya-tasheva.co.uk/">
+    <img src="https://img.shields.io/badge/Website-yuliya--tasheva.co.uk-0066CC?style=for-the-badge" alt="Website"></a>
+</p>
 
-- [Overview](#overview)
-  - [User Story](#user-story)
-  - [User Criteria](#user-criteria)
-  - [Acceptance Criteria](#acceptance-criteria)
-    - [User Navigation](#user-navigation)
-    - [Category selection](#category-selection)
-    - [YouTube Integration](#youtube-integration)
-    - [Responsive Design](#responsive-design)
-    - [Search Functionality](#github)
-    - [Accessibility and Usability](#accessibility-and-usability)
-    - [Performance and Loading Times](#performance-and-loading-times)
-- [Screenshot](#screenshot)
-- [Technologies Used](#technologies-used)
-- [Links](#links)
-- [Installation](#installation)
-- [Future Development](#future-development)
-- [Contributing](#contributing)
-- [Licence](#licence)
-- [Authors](#authors)
+<p align="center">
+  <a href="https://www.linkedin.com/in/yuliya-stella-tasheva" target="_blank">
+    <img src="https://img.shields.io/badge/-Follow%20on%20LinkedIn-0077B5?logo=linkedin&style=flat-square" alt="Follow on LinkedIn"></a>
+  <img src="https://img.shields.io/github/last-commit/ytasheva/clockwise?style=flat-square&color=green" alt="Last Commit">
+</p>
+
+<p align="center">
+  <b>🌟 If you find this helpful, please star this repo — it helps others discover these resources!</b>
+</p>
+
+<h2>Table of contents</h2>
+
+<ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#key-features">Key features</a></li>
+  <li><a href="#tech-stack">Tech stack</a></li>
+  <li><a href="#screenshot">Screenshot</a></li>
+  <li><a href="#links">Links</a></li>
+  <li><a href="#getting-started">Getting started</a></li>
+  <li><a href="#build">Build</a></li>
+  <li><a href="#deployment">Deployment</a></li>
+  <li><a href="#contributing">Contributing</a></li>
+  <li><a href="#license">License</a></li>
+  <li><a href="#authors">Authors</a></li>
+</ul>
 
 
-## Overview
+<hr>
 
-- EduFlix is an educational platform inspired by Netflix, designed to provide users with access to a wide range of educational content available on YouTube. Users can explore various educational categories and seamlessly access relevant videos curated from the `YouTube API`.
+<h2>Overview</h2>
 
-## User Story
-- As a user interested in learning new topics or expanding my knowledge, I want to visit EduFlix and easily find educational videos on specific subjects of interest.
+<p>
+EduFlix Education is an educational platform inspired by a streaming-style layout. It helps you explore learning content on YouTube by category and search, then opens the selected video on YouTube for playback.
+</p>
 
-## User Criteria
+<h2>Key features</h2>
 
-- Users interested in learning new topics or subjects.
-- Users who prefer video-based educational content.
-- Users who want a curated selection of educational videos from YouTube.
+<ul>
+  <li>Browse curated education categories</li>
+  <li>Search topics and keywords</li>
+  <li>View video thumbnails, titles, and short descriptions</li>
+  <li>Open videos on YouTube</li>
+  <li>Responsive layout for desktop, tablet, and mobile</li>
+</ul>
 
-## Acceptance Criteria
+<h2>Tech stack</h2>
 
-### User Navigation:
+<ul>
+  <li>React</li>
+  <li>Vite</li>
+  <li>Tailwind CSS</li>
+  <li>YouTube Data API</li>
+  <li>Netlify (deployment)</li>
+</ul>
 
-- Users can easily navigate to the EduFlix website.
-- The homepage prominently displays educational categories for users to choose from.
-- Each category should be clearly labelled and visually distinct.
+<h2>Screenshot</h2>
 
-### Category Selection:
-
-- Upon selecting a category, users are presented with a list of educational videos related to that category.
-- The list should include video titles, thumbnails, and brief descriptions for each video.
-- Users can scroll through the list and explore different video options.
-
-### YouTube Integration:
-
-- Videos displayed within each category are sourced from the `YouTube API`.
-- Clicking on a video thumbnail or title redirects the user to the corresponding video on YouTube for playback.
-- The integration with the `YouTube API` ensures that videos are up-to-date and relevant to the chosen category.
-
-### Responsive Design:
-
-- The EduFlix website should be responsive and accessible across various devices, including desktops, tablets, and smartphones.
-- The user experience remains consistent and intuitive regardless of the device used.
-
-### Search Functionality:
-
-- Users can search for specific topics or keywords within the EduFlix platform.
-Search results should dynamically update as the user types, providing real-time feedback.
-
-### Accessibility and Usability:
-
-- The website should adhere to accessibility standards to ensure inclusivity for all users.
-- User interface elements should be intuitive and easy to use, catering to users with varying levels of technological proficiency.
-
-### Performance and Loading Times:
-
-- The website should load quickly, minimizing loading times for both the initial page load and subsequent interactions.
-- Optimize image and video loading to enhance performance and provide a seamless user experience.
-
-## Screenshot
-
+<p>
 <img width="1497" alt="Screenshot Bootstrap1" src="https://github.com/JonRahman/BananasProject2/blob/main/src/assets/images/EduFlix_Demo.gif">
+</p>
 
-## Technologies Used
+<h2>Links</h2>
 
-- **React:** Front-end framework for building the user interface.
-- **Node.js:** JavaScript runtime for server-side development and API integration.
-- **YouTube API:** Integrating `YouTube's API` for fetching and displaying educational videos.
-- **Netlify:** Deployment platform for hosting the Eduflix application online.
+<ul>
+  <li><a href="https://eduflix-education.netlify.app/">Live site</a></li>
+  <li><a href="https://github.com/YTasheva/EduFlix-Education">GitHub repository</a></li>
+<li><a href="https://docs.google.com/presentation/d/1g8W_RB0Ge_BiLAR7eQpk6uRR-xB80-R80DcC3i9etD8/edit?usp=sharing)">Presentation Slides</a></li>
+</ul>
 
-## Links
+<h2>Getting started</h2>
 
-- [Deployed Application](https://eduflix-education.netlify.app/)
-- [GitHub Repo](https://github.com/YTasheva/EduFlix-Education)
-- [Presentation slides](https://docs.google.com/presentation/d/1g8W_RB0Ge_BiLAR7eQpk6uRR-xB80-R80DcC3i9etD8/edit?usp=sharing)
+<ol>
+  <li>Clone the repo</li>
+</ol>
+
+<pre><code>git clone https://github.com/YTasheva/EduFlix-Education.git
+cd EduFlix-Education
+</code></pre>
+
+<ol start="2">
+  <li>Install dependencies</li>
+</ol>
+
+<pre><code>npm install
+</code></pre>
+
+<ol start="3">
+  <li>Add your YouTube API key</li>
+</ol>
+
+<p>
+Create a file named <b>.env</b> in the project root. Add your key using the same variable name used in the app code.
+If you are using Vite defaults, the name often starts with <b>VITE_</b>. If you are unsure, search the codebase for <b>process.env</b> or <b>import.meta.env</b> and copy the exact variable name.
+</p>
+
+<pre><code># example only, match the variable name used in the code
+VITE_YOUTUBE_API_KEY=YOUR_KEY_HERE
+</code></pre>
+
+<ol start="4">
+  <li>Run the app</li>
+</ol>
+
+<pre><code>npm run dev
+</code></pre>
+
+<h2>Build</h2>
+
+<pre><code>npm run build
+npm run preview
+</code></pre>
+
+<h2>Deployment</h2>
+
+<p>
+This project works well on Netlify. Set the build command to <b>npm run build</b> and the publish directory to <b>dist</b>.
+Add the same environment variable used locally to your Netlify site settings.
+</p>
+
+<h2>Contributing</h2>
+
+<ul>
+  <li>Open an issue for bugs and feature requests</li>
+  <li>Fork the repo and open a pull request</li>
+</ul>
+
+<h2>License</h2>
+
+<p>
+MIT. See <a href="LICENSE">LICENSE</a>.
+</p>
+
+<h2>Authors</h2>
+
+<ul>
+  <li><a href="https://github.com/YTasheva">Yuliya Tasheva</a></li>
+  <li><a href="https://github.com/JonRahman">Jon Rahman</a></li>
+  <li><a href="https://github.com/emmaboadi">Emmanuel Boadi</a></li>
+</ul>
+::contentReference[oaicite:0]{index=0}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-## Installation
-
-- To install this application, clone or download
-  the code into your terminal for the respective repository. Then, install npm at the root of the application and run `npm start` in your terminal to launch the application.
-
-- Use Visual Studio Code or a similar source-code editor to run the code.
   
-## Future Development
 
-- Implement user authentication and personalized recommendations based on user preferences.
-- Enhance search functionality with advanced filtering options and predictive search suggestions.
-- Introduce a rating and feedback system for users to provide feedback on the educational content.
-- Expand content sources beyond YouTube to include other educational platforms and resources.
 
-## Contributing
 
-- Contributions to the EduFlix project are welcome! Please refer to the CONTRIBUTING.md file for more information on how to contribute.
-
-## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-## Authors
-
-- GitHub - [Yuliya Tasheva](https://github.com/YTasheva); [Jon Rahman](https://github.com/JonRahman); [Emmanuel Boadi](https://github.com/emmaboadi)
