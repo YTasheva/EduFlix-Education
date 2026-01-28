@@ -152,7 +152,7 @@ Add the same environment variable used locally to your Netlify site settings.
 <h2>License</h2>
 
 <p>
-MIT. See <a href="LICENSE">LICENSE</a>.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 </p>
 
 <h2>Authors</h2>
@@ -162,7 +162,7 @@ MIT. See <a href="LICENSE">LICENSE</a>.
   <li><a href="https://github.com/JonRahman">Jon Rahman</a></li>
   <li><a href="https://github.com/emmaboadi">Emmanuel Boadi</a></li>
 </ul>
-::contentReference[oaicite:0]{index=0}
+
 
 
 
