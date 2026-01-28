@@ -151,9 +151,8 @@ Add the same environment variable used locally to your Netlify site settings.
 
 <h2>License</h2>
 
-<p>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-</p>
+
 
 <h2>Authors</h2>
 
